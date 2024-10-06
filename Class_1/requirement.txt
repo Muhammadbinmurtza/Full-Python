@@ -1,0 +1,5 @@
+numpy
+pandas
+jupyter
+mypy
+mypy  is important bcz it creates language from dynamic to static

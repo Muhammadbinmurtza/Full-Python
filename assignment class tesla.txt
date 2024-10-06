@@ -1,0 +1,40 @@
+from typing import Any
+car_name : str = input("what is your car name")
+car_name_or = car_name.lower()
+class Cars():
+    def __init__(self,car_speed:str, car_model:int) -> None:
+        self.car_speed : str = car_speed
+        self.car_model : int = car_model
+class Tesla(Cars):
+    def __init__(self, car_speed : Any, car_model : Any , charge_time : Any, autopilot_gen : Any ) -> None:
+        super().__init__(car_speed, car_model)
+        self.charge_time : str = charge_time
+        self.autopilot_gen : int = autopilot_gen
+    
+    def tesla_input(self) -> None:
+        if car_name_or == "tesla":
+            self.car_speed = input("Please write the Tesla speed: ")
+            self.car_model = int(input("What is your Tesla model? "))
+            self.charge_time = input("What is your Tesla charge time? ")
+            self.autopilot_gen = int(input("What is the autopilot generation of your Tesla? "))
+        else:
+            pass
+    def tesla_print(self):
+        if car_name_or == "tesla":
+            print(f"the car name is tesla")
+            print(f"the car speed  is : {self.car_speed}")
+            print(f"the car model is : {self.car_model}")
+            print(f"the charging time of tesla is : {self.charge_time}")
+            if self.autopilot_gen < 3 and self.autopilot_gen > 0:
+                print(f"the autopilot gen is : {self.autopilot_gen}")
+            else:
+                print("invaid value written of autopilot gen")
+        else:
+            pass
+if car_name_or == "tesla":
+    tesla : Tesla = Tesla("",0,"",0)
+    tesla.tesla_input()
+    tesla.tesla_print()
+else:
+    pass
+
